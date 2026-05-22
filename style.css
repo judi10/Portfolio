@@ -103,80 +103,51 @@ a:hover { color: var(--color-primary-dark); }
    5. HÉROS
 ══════════════════════════════════════════════════════════════════ */
 #hero {
-  padding-top: 100px;
+  padding-top: 80px;
   min-height: 100vh;
+  display: flex;
+  align-items: center;
   background: radial-gradient(
     ellipse at 70% 50%,
     rgba(100, 255, 218, 0.08) 0%,
     transparent 60%
   ), var(--color-dark);
 }
- 
-/* Titre principal */
+
 #hero h1 {
   font-size: clamp(2.5rem, 6vw, 4rem);
   line-height: 1.1;
 }
- 
-/* Sous-titre */
+
 #hero .lead {
   font-size: clamp(1rem, 2vw, 1.2rem);
   color: var(--color-text-muted);
   max-width: 560px;
 }
- 
-/* ── Avatar placeholder ── */
-.hero-avatar {
-  width: 320px;
-  height: 320px;
-  border-radius: 50%;
-  background: rgba(100, 255, 218, 0.05);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1.5px solid rgba(100, 255, 218, 0.15);
- 
-  /* Animation légère au hover */
-  transition: border-color 0.3s ease, background 0.3s ease;
+
+#hero img {
+  max-width: 650px;
+  width: 100%;
+  mix-blend-mode: screen;
 }
- 
-.hero-avatar:hover {
-  border-color: rgba(100, 255, 218, 0.35);
-  background: rgba(100, 255, 218, 0.08);
-}
- 
-.hero-avatar .bi {
-  font-size: 10rem;
-  color: var(--color-primary);
-  opacity: 0.2;
-}
- 
-/* ── Responsive : centrage mobile ── */
+
+/* ── Responsive ── */
 @media (max-width: 991.98px) {
   #hero {
     text-align: center;
   }
-  
   #hero .lead {
     max-width: 100%;
-    margin-left: auto;
-    margin-right: auto;
+    margin-inline: auto;
   }
- 
   #hero .d-md-flex {
     justify-content: center !important;
   }
- 
-  .hero-avatar {
-    width: 220px;
-    height: 220px;
-  }
- 
-  .hero-avatar .bi {
-    font-size: 7rem;
+  #hero img {
+    max-width: 300px;
+    
   }
 }
-
 
 /* ══════════════════════════════════════════════════════════════════
    11. FOOTER
