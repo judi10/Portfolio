@@ -1,0 +1,188 @@
+/* ══════════════════════════════════════════════════════════════════
+   1. VARIABLES DE THÈME  
+══════════════════════════════════════════════════════════════════ */
+:root {
+  /* ── Couleurs principales ── */
+  --color-primary:      #64FFDA;   /* Accent / CTA – rouge-orange vif  touché   */
+  --color-primary-dark: #c0392b;   /* Survol des boutons primaires          */
+  --color-dark:         #0A192F;   /* Fond général – navy profond   touché          */
+  --color-dark-alt:     #16213E;   /* Fond sections alternées               */
+  --color-card:         #112240;   /* Fond des cartes       touché                */
+
+  /* ── Couleurs de texte ── */
+  --color-text:         #CCD6F6;   /* Corps de texte principal      touché        */
+  --color-text-muted:   #8892B0;   /* Texte secondaire / légendes      touché     */
+  --color-heading:      #FFFFFF;   /* Titres h1–h4                          */
+
+  /* ── Typographie ── */
+  --font-heading: 'Poppins', sans-serif;  /* Titres et sous-titres          */
+  --font-body:    'Inter',   sans-serif;  /* Corps de texte                  */
+  --font-size-base: 1rem;                 /* 16px par défaut                 */
+  --line-height:    1.75;                 /* Hauteur de ligne lisible        */
+
+  /* ── Espacements des sections ── */
+  --section-padding: 6rem 0;
+
+  /* ── Bords arrondis ── */
+  --border-radius-card: 1rem;
+  --border-radius-btn:  0.5rem;
+
+  /* ── Ombres ── */
+  --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.35);
+  --shadow-hover: 0 16px 48px rgba(233, 79, 55, 0.25);
+
+  /* ── Transitions ── */
+  --transition: all 0.3s ease;
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   2. RESET & BASE
+══════════════════════════════════════════════════════════════════ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;          /* Défilement doux pour les ancres     */
+  font-size: var(--font-size-base);
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-dark);
+  color: var(--color-text);
+  line-height: var(--line-height);
+  overflow-x: hidden;               /* Évite le défilement horizontal      */
+  /* padding-top: 64px;                     /* ← compense la navbar fixed */
+}
+
+/* Surcharge de la couleur primaire Bootstrap */
+.text-primary   { color: var(--color-primary) !important; }
+.bg-primary     { background-color: var(--color-primary) !important; }
+.btn-primary    { background-color: var(--color-primary);
+                  border-color: var(--color-primary); }
+.btn-primary:hover { background-color: var(--color-primary-dark);
+                     border-color: var(--color-primary-dark); }
+.btn-outline-primary { color: var(--color-primary);
+                       border-color: var(--color-primary); }
+.btn-outline-primary:hover { background-color: var(--color-primary);
+                              color: #fff; }
+
+
+
+
+/* ══════════════════════════════════════════════════════════════════
+   3. TYPOGRAPHIE
+══════════════════════════════════════════════════════════════════ */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--color-heading);
+  line-height: 1.2;
+}
+
+/*
+  Hiérarchie visuelle des tailles (principe du cours) :
+  h1 → 3.5rem  ·  h2 → 2.5rem  ·  h3 → 1.75rem  ·  h4 → 1.25rem
+*/
+h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
+h2 { font-size: clamp(1.75rem, 3.5vw, 2.5rem); }
+h3 { font-size: 1.5rem; }
+
+p { color: var(--color-text); }
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: var(--transition);
+}
+a:hover { color: var(--color-primary-dark); }
+
+/* ══════════════════════════════════════════════════════════════════
+   5. HÉROS
+══════════════════════════════════════════════════════════════════ */
+#hero {
+  padding-top: 100px;
+  min-height: 100vh;
+  background: radial-gradient(
+    ellipse at 70% 50%,
+    rgba(100, 255, 218, 0.08) 0%,
+    transparent 60%
+  ), var(--color-dark);
+}
+ 
+/* Titre principal */
+#hero h1 {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  line-height: 1.1;
+}
+ 
+/* Sous-titre */
+#hero .lead {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: var(--color-text-muted);
+  max-width: 560px;
+}
+ 
+/* ── Avatar placeholder ── */
+.hero-avatar {
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: rgba(100, 255, 218, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid rgba(100, 255, 218, 0.15);
+ 
+  /* Animation légère au hover */
+  transition: border-color 0.3s ease, background 0.3s ease;
+}
+ 
+.hero-avatar:hover {
+  border-color: rgba(100, 255, 218, 0.35);
+  background: rgba(100, 255, 218, 0.08);
+}
+ 
+.hero-avatar .bi {
+  font-size: 10rem;
+  color: var(--color-primary);
+  opacity: 0.2;
+}
+ 
+/* ── Responsive : centrage mobile ── */
+@media (max-width: 991.98px) {
+  #hero {
+    text-align: center;
+  }
+  
+  #hero .lead {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+ 
+  #hero .d-md-flex {
+    justify-content: center !important;
+  }
+ 
+  .hero-avatar {
+    width: 220px;
+    height: 220px;
+  }
+ 
+  .hero-avatar .bi {
+    font-size: 7rem;
+  }
+}
+
+
+/* ══════════════════════════════════════════════════════════════════
+   11. FOOTER
+══════════════════════════════════════════════════════════════════ */
+footer {
+  background: #f8f6f691;
+  border-top: 1px solid #00000008;
+}
+
