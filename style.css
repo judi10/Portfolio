@@ -190,6 +190,41 @@ a:hover { color: var(--color-primary-dark); }
 }
 
 /* ══════════════════════════════════════════════════════════════════
+   6. CARDS PROJETS
+══════════════════════════════════════════════════════════════════ */
+#cases .card {
+  background-color: var(--color-card);
+  border: 1px solid rgba(100, 255, 218, 0.1);
+  border-radius: var(--border-radius-card);
+  transition: var(--transition);
+}
+
+#cases .card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(100, 255, 218, 0.3);
+  box-shadow: var(--shadow-hover);
+}
+
+#cases .card-title {
+  color: var(--color-heading);
+  font-family: var(--font-heading);
+}
+
+#cases .card-text {
+  color: var(--color-text-muted);
+}
+
+#cases .card-img-top {
+  height: 200px;
+  width: 100%;
+  object-fit: contain;        /* contain pour les SVG, pas cover */
+  padding: 2rem;              /* espace autour de l'icône SVG */
+  background-color: var(--color-dark-alt);
+  border-radius: var(--border-radius-card) var(--border-radius-card) 0 0;
+}
+
+
+/* ══════════════════════════════════════════════════════════════════
    11. FOOTER
 ══════════════════════════════════════════════════════════════════ */
 footer {
