@@ -234,6 +234,123 @@ a:hover { color: var(--color-primary-dark); }
 }
 
 
+
+/* ══════════════════════════════════════════════════════════════════
+   7. À PROPOS
+══════════════════════════════════════════════════════════════════ */
+#about {
+  background-color: var(--color-dark-alt);
+  border-top: 1px solid rgba(100, 255, 218, 0.08);
+  border-bottom: 1px solid rgba(100, 255, 218, 0.08);
+}
+ 
+#about p {
+  color: var(--color-text-muted);
+  font-size: 1.05rem;
+  line-height: 1.85;
+}
+ 
+#about .social-link {
+  color: var(--color-text-muted);
+  transition: var(--transition);
+  display: inline-block;
+}
+ 
+#about .social-link:hover {
+  color: var(--color-primary);
+  transform: translateY(-3px);
+}
+ 
+ 
+/* ══════════════════════════════════════════════════════════════════
+   8. COMMENT JE TRAVAILLE
+══════════════════════════════════════════════════════════════════ */
+#work {
+  background-color: var(--color-dark);
+}
+ 
+/* ── Étapes ── */
+.work-icon {
+  width: 48px;
+  height: 48px;
+  background: rgba(100, 255, 218, 0.06);
+  border: 1px solid rgba(100, 255, 218, 0.15);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+ 
+.work-step p {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+}
+ 
+/* ── Badges notions UX ── */
+.ux-note {
+  background: rgba(100, 255, 218, 0.04);
+  border: 1px solid rgba(100, 255, 218, 0.1);
+  border-radius: var(--border-radius-card);
+}
+ 
+.badge-ux {
+  font-size: 0.75rem;
+  padding: 4px 10px;
+  border-radius: 20px;
+  background: rgba(100, 255, 218, 0.08);
+  color: var(--color-primary);
+  border: 1px solid rgba(100, 255, 218, 0.2);
+  white-space: nowrap;
+}
+ 
+/* ── Tech Stack ── */
+.stack-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+}
+ 
+.stack-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+ 
+.stack-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  background: var(--color-card);
+  border: 1px solid rgba(100, 255, 218, 0.08);
+  border-radius: 12px;
+  padding: 14px 18px;
+  min-width: 72px;
+  transition: var(--transition);
+  cursor: default;
+}
+ 
+.stack-item i {
+  font-size: 1.8rem;
+  color: var(--color-primary);
+}
+ 
+.stack-item span {
+  font-size: 0.72rem;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+ 
+.stack-item:hover {
+  border-color: rgba(100, 255, 218, 0.3);
+  background: rgba(100, 255, 218, 0.05);
+  transform: translateY(-3px);
+}
+
+
 /* ══════════════════════════════════════════════════════════════════
    11. FOOTER
 ══════════════════════════════════════════════════════════════════ */
