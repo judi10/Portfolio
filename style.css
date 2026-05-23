@@ -197,6 +197,7 @@ a:hover { color: var(--color-primary-dark); }
   border: 1px solid rgba(100, 255, 218, 0.1);
   border-radius: var(--border-radius-card);
   transition: var(--transition);
+  overflow: hidden;
 }
 
 #cases .card:hover {
@@ -214,13 +215,22 @@ a:hover { color: var(--color-primary-dark); }
   color: var(--color-text-muted);
 }
 
-#cases .card-img-top {
+/* SVG — icône centrée avec espace */
+#cases .card-img-top.img-icon {
   height: 200px;
   width: 100%;
-  object-fit: contain;        /* contain pour les SVG, pas cover */
-  padding: 2rem;              /* espace autour de l'icône SVG */
+  object-fit: contain;
+  padding: 2rem;
   background-color: var(--color-dark-alt);
-  border-radius: var(--border-radius-card) var(--border-radius-card) 0 0;
+}
+
+/* PNG/JPG — remplit toute la zone */
+#cases .card-img-top.img-cover {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+  object-position: center top;
+  padding: 0;
 }
 
 
