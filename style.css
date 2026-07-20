@@ -59,6 +59,14 @@ body {
   /* padding-top: 64px;                     /* ← compense la navbar fixed */
 }
 
+/* Décale le point d'ancrage vers le bas pour que le haut des titres ne
+   soit plus coupé par la nav fixe quand on clique un lien du menu.
+   --nav-height est calculée en JS pour coller exactement à la hauteur
+   réelle de la nav (voir script en fin de body) */
+#about, #work, #cases {
+  scroll-margin-top: var(--nav-height, 90px);
+}
+
 /* Surcharge de la couleur primaire Bootstrap */
 .text-primary   { color: var(--color-primary) !important; }
 .bg-primary     { background-color: var(--color-primary) !important; }
@@ -255,6 +263,7 @@ a:hover { color: var(--color-primary-dark); }
   background-color: var(--color-dark-alt);
   border-top: 1px solid rgba(100, 255, 218, 0.08);
   border-bottom: 1px solid rgba(100, 255, 218, 0.08);
+  min-height: 100vh;
 }
  
 #about p {
@@ -273,6 +282,34 @@ a:hover { color: var(--color-primary-dark); }
   color: var(--color-primary);
   transform: translateY(-3px);
 }
+
+/* ── Cartes de statistiques ── */
+.stat-card {
+  background: var(--color-card);
+  border: 1px solid rgba(100, 255, 218, 0.1);
+  border-radius: var(--border-radius-card);
+  padding: 1.5rem 1rem;
+  transition: var(--transition);
+}
+
+.stat-card:hover {
+  border-color: rgba(100, 255, 218, 0.3);
+  transform: translateY(-3px);
+}
+
+.stat-number {
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1.2;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin-top: 0.4rem;
+}
  
  
 /* ══════════════════════════════════════════════════════════════════
@@ -280,6 +317,7 @@ a:hover { color: var(--color-primary-dark); }
 ══════════════════════════════════════════════════════════════════ */
 #work {
   background-color: var(--color-dark);
+  min-height: 100vh;
 }
 
 #work .text-center p {
